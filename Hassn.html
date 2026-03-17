@@ -1,0 +1,88 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eid Salami Lottery</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #0f9b8e, #1fc8db);
+      color: white;
+      text-align: center;
+    }.container {
+  margin-top: 80px;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+.card {
+  background: rgba(255,255,255,0.1);
+  padding: 30px;
+  border-radius: 20px;
+  display: inline-block;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+input {
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  margin-top: 10px;
+  width: 200px;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  background: gold;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.result {
+  margin-top: 20px;
+  font-size: 1.5rem;
+}
+
+footer {
+  position: fixed;
+  bottom: 10px;
+  width: 100%;
+  font-size: 0.9rem;
+}
+
+  </style>
+</head>
+<body>  <div class="container">
+    <h1>🌙 Eid Salami Lottery 🎉</h1>
+    <div class="card">
+      <p>Enter your name and try your luck!</p>
+      <input type="text" id="name" placeholder="Your Name">
+      <br>
+      <button onclick="drawLottery()">Get Salami</button>
+      <div class="result" id="result"></div>
+    </div>
+  </div>  <footer>
+    Website Owner: Hasan Ahmed Sojib
+  </footer>  <script>
+    function drawLottery() {
+      const name = document.getElementById('name').value;
+      if (!name) {
+        alert('Please enter your name!');
+        return;
+      }
+
+      // Lottery: max 5 taka per person
+      const salami = Math.floor(Math.random() * 6); // 0-5 taka
+
+      document.getElementById('result').innerHTML =
+        `🎁 ${name}, you got ${salami} Taka Eid Salami from Hasan!`;
+    }
+  </script></body>
+</html>
